@@ -4,7 +4,7 @@ defmodule ParticlesApiWeb.ElementController do
   alias ParticlesApi.Particles
   alias ParticlesApi.Particles.Element
 
-  action_fallback ParticlesApiWeb.FallbackController
+  action_fallback(ParticlesApiWeb.FallbackController)
 
   def index(conn, _params) do
     elements = Particles.list_elements()
@@ -34,6 +34,7 @@ defmodule ParticlesApiWeb.ElementController do
 
   def delete(conn, %{"id" => id}) do
     element = Particles.get_element!(id)
+
     with {:ok, %Element{}} <- Particles.delete_element(element) do
       send_resp(conn, :no_content, "")
     end

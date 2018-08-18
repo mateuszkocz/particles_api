@@ -11,7 +11,7 @@ defmodule ParticlesApi.Application do
       # Start the Ecto repository
       supervisor(ParticlesApi.Repo, []),
       # Start the endpoint when the application starts
-      supervisor(ParticlesApiWeb.Endpoint, []),
+      supervisor(ParticlesApiWeb.Endpoint, [])
       # Start your own worker by calling: ParticlesApi.Worker.start_link(arg1, arg2, arg3)
       # worker(ParticlesApi.Worker, [arg1, arg2, arg3]),
     ]

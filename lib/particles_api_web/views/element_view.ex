@@ -11,11 +11,13 @@ defmodule ParticlesApiWeb.ElementView do
   end
 
   def render("element.json", %{element: element}) do
-    %{id: element.id,
+    %{
+      id: element.id,
       name: element.name,
       symbol: element.symbol,
       atomic_number: element.atomic_number,
       group: element.group,
-      period: element.period}
+      period: element.period
+    }
   end
 end

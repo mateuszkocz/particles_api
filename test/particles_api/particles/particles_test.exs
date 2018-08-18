@@ -6,8 +6,20 @@ defmodule ParticlesApi.ParticlesTest do
   describe "elements" do
     alias ParticlesApi.Particles.Element
 
-    @valid_attrs %{atomic_number: 42, group: 42, name: "some name", period: 42, symbol: "some symbol"}
-    @update_attrs %{atomic_number: 43, group: 43, name: "some updated name", period: 43, symbol: "some updated symbol"}
+    @valid_attrs %{
+      atomic_number: 42,
+      group: 42,
+      name: "some name",
+      period: 42,
+      symbol: "some symbol"
+    }
+    @update_attrs %{
+      atomic_number: 43,
+      group: 43,
+      name: "some updated name",
+      period: 43,
+      symbol: "some updated symbol"
+    }
     @invalid_attrs %{atomic_number: nil, group: nil, name: nil, period: nil, symbol: nil}
 
     def element_fixture(attrs \\ %{}) do
