@@ -21,7 +21,8 @@ defmodule ParticlesApiWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", ParticlesApiWeb do
-  #   pipe_through :api
-  # end
+   scope "/api", ParticlesApiWeb do
+     pipe_through :api
+     get("/elements", ElementController, :index)
+   end
 end
