@@ -10,6 +10,7 @@ defmodule ParticlesApiWeb.Router do
   end
 
   pipeline :api do
+    plug(CORSPlug, origin: "*")
     plug(:accepts, ["json"])
   end
 
@@ -21,8 +22,8 @@ defmodule ParticlesApiWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-   scope "/api", ParticlesApiWeb do
-     pipe_through :api
-     get("/elements", ElementController, :index)
-   end
+  scope "/api", ParticlesApiWeb do
+    pipe_through(:api)
+    get("/elements", ElementController, :index)
+  end
 end

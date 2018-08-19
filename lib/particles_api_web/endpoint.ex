@@ -42,8 +42,6 @@ defmodule ParticlesApiWeb.Endpoint do
     signing_salt: "LQJl9JEO"
   )
 
-  plug(CORSPlug)
-
   plug(ParticlesApiWeb.Router)
 
   @doc """
